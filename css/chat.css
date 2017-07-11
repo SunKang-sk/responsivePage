@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 .va{vertical-align: middle;}
 .chat-window a{color:#535353;text-decoration: none;}
 .chat-window ul{margin:0;padding: 0;}
@@ -14,19 +14,20 @@
 .chat-window{
     position: fixed;
     bottom: 0;
-    right: 5px;
+    right: 0;
     z-index:8;
     display: none;
 }
 
 /*拖拽条*/
 #dragBar{
-    width: 86%;
+    width: 60%;
     height: 40px;
     position: absolute;
-    top:0;
-    z-index:9;
-    cursor:move;
+    top: 0;
+    left: 94px;
+    z-index: 9;
+    cursor: move;
 }
 .dragContent { width: auto; height: auto; margin: 0 auto; text-align: center;position: relative; }
 .chatBox { width: auto; border: 1px #666666 solid;
@@ -39,7 +40,7 @@
     box-sizing: border-box;
     /*display: none;*/
 }
-.chatRight { border-left: 1px #bebebe solid; width: 414px; height: 100%;box-sizing: border-box; float: right; }
+.chatRight { border-left: 1px #bebebe solid; width: 414px; height: 100%;box-sizing: border-box; float: right;position: relative; }
 
 .chat01{ height: 300px; }
 .chat03_title,.chat01_title {background: linear-gradient(top,#5fd5f5,#4db4d0); background:-webkit-linear-gradient( top,#5fd5f5,#4db4d0);
@@ -157,18 +158,18 @@ input.f1, input.f2 { display: none; }
 /*.message .wrap-ri div {margin-left: 30px;  color: #999; height: 18px; line-height: 18px; overflow: hidden; clear: both; }*/
 .message .wrap-ri span { display: inline-block; line-height: 18px; vertical-align: bottom; zoom: 1; }
 
-.wl_faces_box { background:#ddd; position: absolute; width: 428px; height: 225px; bottom: 22px; left: -50px; display: none;z-index: 5; }
-.wl_faces_content { background: #fff; border: 1px #ccc solid; width: 417px; height: 216px; margin: 3px 4px; }
+.wl_faces_box { position: absolute; width: 412px; height: 216px; bottom: 22px; left: 0; display: none;z-index: 5;box-shadow: 0 0 8px 1px #555; }
+.wl_faces_content { background: #fff; width: 100%; height: 100%;  }
 .wl_faces_content .title { background: #fff; height: 35px;  }
 .wl_faces_content .title ul {background: #ececec; width: 100%;height: 35px;box-sizing: border-box;padding: 5px 10px 0 10px;}
 .wl_faces_content .title ul li { float:left; width: 82px; height: 100%; text-align: center; line-height: 35px;color: #333; }
 .wl_faces_content .title ul li.title_name { font-weight: bold;  }
 .wl_faces_content .title ul li.faceCur { background: #fff; }
-.wl_faces_main { width: 100%;height: 179px;box-sizing: border-box; overflow-x: hidden; overflow-y: auto;}
-.wl_faces_main ul {margin: 10px 28px 0 28px; overflow: hidden; border-top: 1px #CCC solid; border-left: 1px #CCC solid; width: 362px; box-sizing: border-box; }
+.wl_faces_main { width: 100%;height: 179px; padding: 10px 10px 0 10px; box-sizing: border-box; overflow-x: hidden; overflow-y: auto;}
+.wl_faces_main ul { overflow: hidden; border-top: 1px #CCC solid; border-left: 1px #CCC solid; box-sizing: border-box; }
 .wl_faces_main ul li { float: left; border-right: 1px #CCC solid; border-bottom: 1px #CCC solid; height: 30px; width: 31px; margin: -1px 0 0 -1px; padding: 4px 2px; text-align: center; }
 .wl_faces_main ul li img { width: 22px; height: 22px; position: relative; top: -2px;}
-.wlf_icon {  position: absolute; width: 22px; height: 9px; bottom: -4px; _bottom: -11px; left: 61px;  }
+.wlf_icon {  position: absolute; width: 28px; height: 14px; bottom: -6px; _bottom: -11px; left: 13px;  }
 .chat03_content li label { display: block; position: absolute; width: 9px; height: 9px; left: 27px; }
 label.online { bottom: 4px; _bottom: 2px; }
 label.offline { bottom: 4px; _top: 25px; }
@@ -260,73 +261,17 @@ label.offline { bottom: 4px; _top: 25px; }
 .foldTits span.custSer-tit{display: inline-block;width: 30px;height: 30px;vertical-align: middle;}
 /* 效果CSS结束 */
 
-/*------------右侧边栏--------------*/
-
-.drawer {
-    position: fixed;
-    z-index: 5;
-    top: 150px;
-    right: 100px;
-    height: auto;
-    /*padding: 15px 0;*/
-    background: #31add0;
-    color: white;
-    text-align: center;
-    /* Remove 4px gap between <li> */
-}
-.drawer > li {
-    min-height: 50px;
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-    list-style: none;
-    line-height: 50px;
-    /*transform: translateZ(0);*/
-
-}
-.drawer > li > a {
-    position: relative;
-    display: block;
-    min-width: 60px;
-    min-height: 50px;
-    line-height: 50px;
-    /* Reset font-size */
-    font-size: 14px;
-    text-decoration: none;
-    color: white;
-    /*transition: background 0.3s;*/
-}
-.drawer p.dra-main{
-    display: none;
-    background: #4fd8fd;
-    position: absolute;
-    padding: 5px 5px;
-    right: 60px;
-    top:0;
-    /*display: inline-block;*/
-    min-width: 100px;
-    min-height: 100%;
-    vertical-align: middle;
-}
-.drawer p.dra-main a{
-    display: inline-block;
-    color: #fff;
-    min-width: 100px;
-    float: left;
-}
-.dra-main a img{float: left;}
-.drawer i {
-    display: inline-block;
-    font-size: 25px;
-    vertical-align: middle;
-}
-.dra-main > a {
-    font-size: 12px;
-    line-height: 25px;
-}
-
-.drawer > li { display: block;}
-
-.drawer > li a:hover {
-    background: #4fd8fd;
+/*---移动端样式----*/
+@media screen and (max-width:767px){
+    .chat-window{
+        width: 100%;
+    }
+    .chatBox,.dragContent,.chatRight{
+        width: 100%;
+        height: 100%;
+    }
+    .chatBox .chatLeft{
+        display: none;
+    }
+    #dragBar{ display: none;  }
 }
